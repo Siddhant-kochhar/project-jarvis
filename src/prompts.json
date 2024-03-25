@@ -1,0 +1,26 @@
+{
+    "science": {
+        "class_9": {
+            "beginner": "beginner-prompt",
+            "intermediate": "",
+            "advanced": ""
+        },
+        "class_10": {
+            "beginner": "beginner-prompt",
+            "intermediate": "",
+            "advanced": ""
+        }
+    },
+    "social_science": {
+        "class_9": {
+            "beginner": "beginner-prompt",
+            "intermediate": "",
+            "advanced": ""
+        },
+        "class_10": {
+            "beginner": "beginner-prompt",
+            "intermediate": "",
+            "advanced": ""
+        }
+    }
+}
