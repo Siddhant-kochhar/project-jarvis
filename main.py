@@ -17,6 +17,8 @@ app.add_middleware(
 )
 
 class QuestionRequest(BaseModel):
+    user_id: str
+    subject: str
     question: str
 
 class Response(BaseModel):
