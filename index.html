@@ -3,77 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Jarvis</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        #container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        input[type="text"] {
-            width: calc(100% - 80px);
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        #response {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
+    <title>JarvisAI- AI Tutor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="container">
-        <h1>Project Jarvis</h1>
-        <input type="text" id="userIdInput" placeholder="User ID">
-        <input type="text" id="subjectInput" placeholder="Please enter your subject">
-        <input type="text" id="questionInput" placeholder="Type your question here...">
-        <button onclick="askQuestion()">Ask your doubts!</button>
-        <div id="response"></div>
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="container">
+            <h1>Your Company Name</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <button class="dropbtn">Services</button>
+                    <div class="dropdown-content">
+                        <a href="project-jarvis.html">AI Tutor</a>
+                        <a href="youtube-video-summarizer.html">YouTube Summarizer</a>
+                    </div>
+                </li>
+                <li><a href="https://forms.gle/CYd6GThxfi1arymS9">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Popup for User Type -->
+    <div id="userTypePopup" class="popup">
+        <div class="popup-content">
+            <h2>Welcome to AI Tutor</h2>
+            <p>Are you a new user or already registered?</p>
+            <button id="newUserBtn">New User</button>
+            <button id="registeredUserBtn">Registered User</button>
+        </div>
     </div>
 
-    <script>
-        async function askQuestion() {
-            const userId = document.getElementById("userIdInput").value;
-            const userSubject = document.getElementById("subjectInput").value;
-            const question = document.getElementById("questionInput").value;
-            const response = await fetch('http://127.0.0.1:8000/ask', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ "user_id": userId, "subject": userSubject, "question": question })
-            });
-            const responseData = await response.json();
-            document.getElementById("response").innerText = responseData.answer;
-        }
-    </script>
+    <!-- Main Content -->
+    <header id="home">
+        <div class="container">
+            <h1>Welcome to Your Personalized AI Tutor</h1>
+            <p>Your partner in learning and summarizing knowledge.</p>
+        </div>
+    </header>
+
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-item">
+                <h3>AI Tutoring</h3>
+                <p>Our AI Tutor adapts to your proficiency level, offering personalized assistance tailored to your knowledge. Whether you're a beginner or advanced learner, it provides targeted guidance to match your needs, ensuring an efficient and engaging learning experience.</p>
+            </div>
+            <div class="service-item">
+                <h3>YouTube Video Summarizer</h3>
+                <p>Quickly get summaries of YouTube videos with AI-powered insights.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot -->
+    <div id="chatbot">
+        <div id="chatbot-header">
+            <span>How can I help you?</span>
+            <button id="closeChatbot">x</button>
+        </div>
+        <div id="chatbot-body">
+            <p>Hello! How can I assist you today?</p>
+        </div>
+        <div id="chatbot-input">
+            <input type="text" placeholder="Type a message..." id="userInput">
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <footer id="contact">
+        <div class="container">
+            <h3>Contact Us</h3>
+            <p>Email: contact@yourcompany.com</p>
+            <p>Phone: +123-456-7890</p>
+            <p>Developed by SIDDHANT KOCHHAR</p>
+            <p>&copy; 2024 Your Company Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
